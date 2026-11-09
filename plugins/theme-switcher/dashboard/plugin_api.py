@@ -315,6 +315,10 @@ def raw_theme(name: str) -> Dict[str, Any]:
     name = str(name or "").strip()
     if not name:
         return {"ok": False, "error": "name required"}
+    # Hardening: same slug rule as /install, so a crafted name cannot escape
+    # the skins directory (e.g. "../config").
+    if not re.fullmatch(r"[a-z0-9][a-z0-9-]*", name):
+        return {"ok": False, "error": "invalid theme name"}
     from hermes_constants import get_hermes_home
 
     path = get_hermes_home() / "skins" / f"{name}.yaml"
