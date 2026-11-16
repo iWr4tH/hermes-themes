@@ -39,6 +39,19 @@ Dark mode (dark-charcoal):
 
 ![Theme Switcher in the desktop app, dark mode](docs/themes-page-dark.png)
 
+## Fork extras
+
+**[Smoked Glass](docs/smoked-glass.md)** is a standalone, dark-only skin in
+[`extras/smoked-glass.yaml`](extras/smoked-glass.yaml): smoked charcoal, soft mint
+highlights, rounded conversation rows, quieter metadata, and matching search,
+pane-tab and toolbar styling. It needs no plugin and does not change native
+window transparency.
+
+Extras are deliberately separate from the paired stock collection: `install.sh`
+and the generated gallery still cover `themes/` only. Follow the
+[Smoked Glass install and rollback guide](docs/smoked-glass.md) to install this
+extra by itself.
+
 ## Themes
 
 | Category | Themes |

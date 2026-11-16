@@ -3,6 +3,19 @@
 All notable changes to the Hermes Theme Pack. This project follows
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- **Smoked Glass standalone extra** — a deliberately dark-only skin with a
+  charcoal/mint palette, rounded Desktop surfaces and conversation rows,
+  quieter secondary metadata, and consistent search/tab/toolbar styling.
+  Ships in `extras/`, outside the generated light/dark stock collection; no
+  plugin or native-window setting changes are needed.
+- **Smoked Glass usage guide and validation** — profile-aware installation,
+  update/rollback instructions, compatibility boundaries, and portable tests
+  for the skin schema, dark-only mode slots, palette contrast and CSS limits.
+
 ## [1.3.0] - 2026-08-12
 
 ### Added
