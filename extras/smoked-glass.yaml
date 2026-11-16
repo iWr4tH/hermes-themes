@@ -1,0 +1,371 @@
+# Smoked Glass — a dark-only Hermes skin with scoped Desktop CSS.
+# Install this YAML only; no plugins or native transparency changes required.
+name: smoked-glass
+description: Smoked charcoal, soft mint highlights and rounded Desktop surfaces
+colors:
+  background: "#101617"
+  ui_accent: "#a4d9ca"
+  banner_accent: "#a4d9ca"
+  banner_title: "#eef4f1"
+  banner_text: "#e7eeeb"
+  ui_text: "#e7eeeb"
+  ui_label: "#c0cdc7"
+  banner_dim: "#9aada4"
+  banner_border: "#35423d"
+  ui_border: "#35423d"
+  ui_ok: "#a0d4b6"
+  ui_warn: "#e4c48d"
+  ui_error: "#ed9c9c"
+  ui_tool: "#a4d9ca"
+  ui_thinking: "#9aada4"
+  prompt: "#e7eeeb"
+  input_rule: "#35423d"
+  response_border: "#35423d"
+  status_bar_bg: "#101617"
+  status_bar_text: "#c0cdc7"
+  status_bar_good: "#a0d4b6"
+  status_bar_warn: "#e4c48d"
+  status_bar_bad: "#ed9c9c"
+  status_bar_critical: "#ed9c9c"
+  session_label: "#a4d9ca"
+  session_border: "#35423d"
+  diff_added: "#a0d4b6"
+  diff_removed: "#ed9c9c"
+  diff_added_word: "#b4e3c7"
+  diff_removed_word: "#f6b5b5"
+  syntax_string: "#b0d8bd"
+  syntax_number: "#e4c48d"
+  syntax_keyword: "#a4d9ca"
+  syntax_comment: "#9aada4"
+  completion_menu_bg: "#171f20"
+  completion_menu_current_bg: "#2a3935"
+  completion_menu_meta_bg: "#1c2625"
+dark_colors:
+  background: "#101617"
+  ui_accent: "#a4d9ca"
+  banner_accent: "#a4d9ca"
+  banner_title: "#eef4f1"
+  banner_text: "#e7eeeb"
+  ui_text: "#e7eeeb"
+  ui_label: "#c0cdc7"
+  banner_dim: "#9aada4"
+  banner_border: "#35423d"
+  ui_border: "#35423d"
+  ui_ok: "#a0d4b6"
+  ui_warn: "#e4c48d"
+  ui_error: "#ed9c9c"
+  ui_tool: "#a4d9ca"
+  ui_thinking: "#9aada4"
+  prompt: "#e7eeeb"
+  input_rule: "#35423d"
+  response_border: "#35423d"
+  status_bar_bg: "#101617"
+  status_bar_text: "#c0cdc7"
+  status_bar_good: "#a0d4b6"
+  status_bar_warn: "#e4c48d"
+  status_bar_bad: "#ed9c9c"
+  status_bar_critical: "#ed9c9c"
+  session_label: "#a4d9ca"
+  session_border: "#35423d"
+  diff_added: "#a0d4b6"
+  diff_removed: "#ed9c9c"
+  diff_added_word: "#b4e3c7"
+  diff_removed_word: "#f6b5b5"
+  syntax_string: "#b0d8bd"
+  syntax_number: "#e4c48d"
+  syntax_keyword: "#a4d9ca"
+  syntax_comment: "#9aada4"
+  completion_menu_bg: "#171f20"
+  completion_menu_current_bg: "#2a3935"
+  completion_menu_meta_bg: "#1c2625"
+light_colors:
+  background: "#101617"
+  ui_accent: "#a4d9ca"
+  banner_accent: "#a4d9ca"
+  banner_title: "#eef4f1"
+  banner_text: "#e7eeeb"
+  ui_text: "#e7eeeb"
+  ui_label: "#c0cdc7"
+  banner_dim: "#9aada4"
+  banner_border: "#35423d"
+  ui_border: "#35423d"
+  ui_ok: "#a0d4b6"
+  ui_warn: "#e4c48d"
+  ui_error: "#ed9c9c"
+  ui_tool: "#a4d9ca"
+  ui_thinking: "#9aada4"
+  prompt: "#e7eeeb"
+  input_rule: "#35423d"
+  response_border: "#35423d"
+  status_bar_bg: "#101617"
+  status_bar_text: "#c0cdc7"
+  status_bar_good: "#a0d4b6"
+  status_bar_warn: "#e4c48d"
+  status_bar_bad: "#ed9c9c"
+  status_bar_critical: "#ed9c9c"
+  session_label: "#a4d9ca"
+  session_border: "#35423d"
+  diff_added: "#a0d4b6"
+  diff_removed: "#ed9c9c"
+  diff_added_word: "#b4e3c7"
+  diff_removed_word: "#f6b5b5"
+  syntax_string: "#b0d8bd"
+  syntax_number: "#e4c48d"
+  syntax_keyword: "#a4d9ca"
+  syntax_comment: "#9aada4"
+  completion_menu_bg: "#171f20"
+  completion_menu_current_bg: "#2a3935"
+  completion_menu_meta_bg: "#1c2625"
+customCSS: |
+  /* Smoked Glass — Desktop skin CSS. No app code, plugins or native settings. */
+  :root {
+    --ui-bg-chrome: #101617;
+    --ui-bg-sidebar: #171d22;
+    --ui-bg-editor: #171f20;
+    --ui-text-primary: #e7eeeb;
+    --ui-text-secondary: #c0cdc7;
+    --ui-text-tertiary: #9aada4;
+    --ui-stroke-secondary: #35423d;
+    --dt-composer-ring: #a4d9ca;
+    --radius: 0.9rem;
+    --sg-accent: #a4d9ca;
+    --sg-rim: rgb(216 240 230 / 0.12);
+  }
+  /* Do not add another opaque painter over native Glass's single body tint. */
+  :root:not([data-hermes-glass]) {
+    --ui-chat-surface-background: #13191d;
+    --ui-sidebar-surface-background: rgb(21 27 32 / 0.78);
+    --ui-editor-surface-background: #151c21;
+  }
+  :root:not([data-hermes-glass]) [data-contrib-shell] {
+    background: radial-gradient(ellipse at 0% 20%, rgb(99 143 127 / 0.12), transparent 52%),
+      radial-gradient(ellipse at 92% 100%, rgb(84 114 112 / 0.07), transparent 55%), #101617 !important;
+  }
+  :root:not([data-hermes-glass]) [data-slot='sidebar-wrapper'] {
+    background-color: transparent !important;
+  }
+  [data-slot='sidebar'] {
+    border-radius: 16px;
+    border-color: var(--sg-rim);
+    background-color: var(--ui-sidebar-surface-background);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.035);
+  }
+  [data-tree-group] {
+    border-radius: 17px;
+  }
+  [data-panel-header] {
+    border-color: rgb(216 240 230 / 0.07);
+  }
+  [data-slot='sidebar-menu-button'] {
+    border-radius: 9px;
+  }
+  [data-slot='composer-surface'] {
+    border-radius: 21px !important;
+    border-color: rgb(212 235 222 / 0.20) !important;
+    background: linear-gradient(145deg, rgb(39 47 53 / 0.94), rgb(27 34 39 / 0.96)) !important;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.055), 0 12px 28px rgb(0 0 0 / 0.20);
+  }
+  [data-slot='composer-surface']:has([data-slot='composer-rich-input']:focus-visible) {
+    border-color: var(--dt-composer-ring) !important;
+  }
+  [data-slot='popover-content'],
+  [data-slot='dropdown-menu-content'],
+  [data-slot='dropdown-menu-sub-content'] {
+    border-radius: 13px !important;
+    border-color: var(--sg-rim) !important;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.04), 0 16px 40px rgb(0 0 0 / 0.34);
+  }
+  /* Never dim approvals, hide controls, change drag regions or resize geometry. */
+  @media (prefers-reduced-transparency: no-preference) {
+    [data-slot='sidebar'] {
+      backdrop-filter: blur(16px) saturate(108%);
+      -webkit-backdrop-filter: blur(16px) saturate(108%);
+    }
+    [data-slot='composer-surface'] {
+      backdrop-filter: blur(14px) saturate(106%);
+      -webkit-backdrop-filter: blur(14px) saturate(106%);
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    [data-slot='sidebar'] { background-color: #1b2229 !important; }
+    [data-slot='composer-surface'] { background: #242e36 !important; }
+  }
+
+  /* BEGIN smoked-glass actual-sidebar correction */
+  /* Conversation rows are SidebarRowShell/.row-hover, not sidebar-menu-button.
+     Scope every rule to the real rail; leave navigation and pane geometry alone. */
+  [data-slot='sidebar'] {
+    --ui-row-hover-background: rgb(211 229 231 / 0.055);
+    --ui-row-active-background: rgb(164 217 202 / 0.105);
+    --ui-row-open-background: rgb(164 217 202 / 0.035);
+    background-image: linear-gradient(155deg, rgb(42 55 65 / 0.25), rgb(16 23 29 / 0.42));
+    box-shadow: inset 0 1px 0 rgb(233 246 241 / 0.045), inset -1px 0 0 rgb(213 234 227 / 0.06);
+  }
+
+  [data-slot='sidebar'] .row-hover:has([data-session-actions]) {
+    border-radius: 12px !important;
+    margin-block: 2px;
+    transition: background-color 120ms ease-out, box-shadow 120ms ease-out;
+  }
+
+  [data-slot='sidebar'] .row-hover:has([data-session-actions]):not([data-glass-opaque]):not([class~='bg-(--ui-row-active-background)']):not([class~='bg-(--ui-row-open-background)']) {
+    background-color: rgb(221 233 235 / 0.018);
+  }
+
+  [data-slot='sidebar'] .row-hover:has([data-session-actions]):not([data-glass-opaque]):not([class~='bg-(--ui-row-active-background)']):hover {
+    background-color: var(--ui-row-hover-background);
+  }
+
+  [data-slot='sidebar'] .row-hover:has([data-session-actions])[class~='bg-(--ui-row-active-background)']:not([data-glass-opaque]) {
+    background-color: var(--ui-row-active-background);
+    background-image: linear-gradient(130deg, rgb(193 234 220 / 0.035), rgb(193 234 220 / 0.01));
+    box-shadow: inset 0 0 0 1px rgb(181 224 208 / 0.16), inset 0 1px 0 rgb(228 248 237 / 0.04);
+  }
+
+  /* Keep working-state motion and status dots; only soften and round the ring.
+     The installed app's arc uses its own radius, so the shell alone is not enough. */
+  [data-slot='sidebar'] .row-hover:has([data-session-actions]) > .arc-row {
+    --arc-radius: 12px;
+    --arc-c1: rgb(164 217 202 / 0.68);
+    --arc-c2: rgb(164 217 202 / 0.20);
+    border-radius: 12px !important;
+  }
+
+  /* Lifted rows must still erase underlying text during drag/reorder. */
+  [data-slot='sidebar'] .row-hover[data-glass-opaque] {
+    background-color: var(--ui-bg-sidebar) !important;
+    background-image: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-slot='sidebar'] .row-hover:has([data-session-actions]) {
+      transition: none !important;
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    [data-slot='sidebar'] {
+      background-image: none;
+    }
+  }
+  /* END smoked-glass actual-sidebar correction */
+
+  /* BEGIN smoked-glass metadata-and-controls polish */
+  /* Quiet only explicitly small secondary text. Titles, status dots, counters,
+     unread markers, actions and their existing visibility rules stay intact. */
+  [data-slot='sidebar'] {
+    --sg-meta-quiet: #94a3a4;
+    --sg-meta-reveal: #b4c2c2;
+  }
+
+  [data-slot='sidebar'] .row-hover:has([data-session-actions])
+    :is(span, div):is([class~='text-[0.625rem]'], [class~='text-[0.6875rem]']):is([class~='text-(--ui-text-tertiary)'], [class~='text-(--ui-text-quaternary)']) {
+    color: var(--sg-meta-quiet);
+  }
+
+  [data-slot='sidebar'] .row-hover:has([data-session-actions]):is(:hover, :focus-within)
+    :is(span, div):is([class~='text-[0.625rem]'], [class~='text-[0.6875rem]']):is([class~='text-(--ui-text-tertiary)'], [class~='text-(--ui-text-quaternary)']) {
+    color: var(--sg-meta-reveal);
+  }
+  /* Matching control materials, without changing measurements or type. */
+  :root {
+    --sg-control-radius: 10px;
+    --sg-control-rim: rgb(211 232 225 / 0.12);
+    --sg-control-hover: rgb(211 232 225 / 0.065);
+  }
+
+  /* SearchField has no dedicated data-slot in this build. Match its native
+     wrapper/input structure, only inside the sidebar and in any UI language. */
+  [data-slot='sidebar'] .inline-flex.max-w-full:has(> input[type='text'][aria-label]) {
+    border-radius: var(--sg-control-radius) !important;
+    border-color: transparent !important;
+    opacity: 1;
+    background-color: rgb(211 232 225 / 0.035);
+    box-shadow: inset 0 0 0 1px var(--sg-control-rim);
+    transition: background-color 120ms ease-out, box-shadow 120ms ease-out;
+  }
+
+  [data-slot='sidebar'] .inline-flex.max-w-full:has(> input[type='text'][aria-label]):hover {
+    background-color: var(--sg-control-hover);
+  }
+
+  [data-slot='sidebar'] .inline-flex.max-w-full:has(> input[type='text'][aria-label]):focus-within {
+    box-shadow: inset 0 0 0 1px rgb(164 217 202 / 0.48), 0 0 0 2px rgb(164 217 202 / 0.10);
+  }
+
+  /* Keep the native tab label, close-button mask, multi-selection and drag area. */
+  [data-slot='pane-tab'] {
+    border-radius: var(--sg-control-radius) !important;
+    border-color: transparent;
+    transition: background-color 120ms ease-out, box-shadow 120ms ease-out, color 120ms ease-out;
+  }
+
+  [data-slot='pane-tab'][data-active='false']:not([data-selected='true']) {
+    background-color: rgb(211 232 225 / 0.025);
+    box-shadow: inset 0 0 0 1px rgb(211 232 225 / 0.065);
+  }
+
+  [data-slot='pane-tab'][data-active='false']:not([data-selected='true']):hover {
+    background-color: var(--sg-control-hover);
+    box-shadow: inset 0 0 0 1px var(--sg-control-rim);
+  }
+
+  [data-slot='pane-tab'][data-active='true']:not([data-selected='true']) {
+    background-color: color-mix(in srgb, var(--sg-accent) 7%, var(--ui-bg-editor));
+    box-shadow: inset 0 -2px 0 var(--pane-tab-active-accent, var(--theme-primary, var(--sg-accent))),
+      inset 0 0 0 1px rgb(211 232 225 / 0.09);
+  }
+
+  /* Only small native chrome controls; never session actions, drag handles,
+     destructive buttons, OS traffic lights or controls inside chat messages. */
+  :is(
+    .titlebar-icon-button,
+    [data-panel-header] [data-slot='button'][data-size^='icon'],
+    [data-panel-header] button[class~='size-5'],
+    [data-slot='sidebar'] [data-slot='button'][data-size^='icon']:not([data-session-actions]):not([data-reorder-handle]):not(.row-hover *)
+  ) {
+    border-radius: var(--sg-control-radius) !important;
+    transition: background-color 120ms ease-out, box-shadow 120ms ease-out, color 120ms ease-out;
+  }
+
+  :is(
+    .titlebar-icon-button,
+    [data-panel-header] [data-slot='button'][data-size^='icon'],
+    [data-panel-header] button[class~='size-5'],
+    [data-slot='sidebar'] [data-slot='button'][data-size^='icon']:not([data-session-actions]):not([data-reorder-handle]):not(.row-hover *)
+  ):not(:disabled):not([aria-disabled='true']) {
+    box-shadow: inset 0 0 0 1px rgb(211 232 225 / 0.055);
+  }
+
+  :is(
+    .titlebar-icon-button,
+    [data-panel-header] [data-slot='button'][data-size^='icon'],
+    [data-panel-header] button[class~='size-5'],
+    [data-slot='sidebar'] [data-slot='button'][data-size^='icon']:not([data-session-actions]):not([data-reorder-handle]):not(.row-hover *)
+  ):not(:disabled):not([aria-disabled='true']):hover {
+    background-color: var(--sg-control-hover);
+    box-shadow: inset 0 0 0 1px var(--sg-control-rim);
+  }
+
+  :is(
+    .titlebar-icon-button,
+    [data-panel-header] [data-slot='button'][data-size^='icon'],
+    [data-panel-header] button[class~='size-5'],
+    [data-slot='sidebar'] [data-slot='button'][data-size^='icon']:not([data-session-actions]):not([data-reorder-handle]):not(.row-hover *)
+  ):focus-visible,
+  [data-slot='pane-tab']:focus-visible {
+    outline: 2px solid var(--sg-accent);
+    outline-offset: -2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-slot='sidebar'] .inline-flex.max-w-full:has(> input[type='text'][aria-label]),
+    [data-slot='pane-tab'],
+    .titlebar-icon-button,
+    [data-panel-header] [data-slot='button'][data-size^='icon'],
+    [data-panel-header] button[class~='size-5'],
+    [data-slot='sidebar'] [data-slot='button'][data-size^='icon']:not([data-session-actions]):not([data-reorder-handle]):not(.row-hover *) {
+      transition: none !important;
+    }
+  }
+  /* END smoked-glass metadata-and-controls polish */
